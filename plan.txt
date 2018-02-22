@@ -1,0 +1,27 @@
+
+
+Pub les meilleurs devs d’AXA
+Présentation OpenID Connect (slides - Simon & Jérôme)
+	- objectifs (à quoi ça sert?)
+	- concepts clés 
+	- Principaux Flows (authorization code, implicit, hybrid?)
+	- Principaux serveurs d'autorisation (google, facebook, twitter, linkedin, Microsoft)
+Tool In Action
+	o	Mise en place d’un serveur « simple » (clone de demo.identityserver.io, parcours du code) -> fork du https://github.com/AxaWebCenter/dojo-oauth-net
+		- Montrer le endpoint discovery
+	o	Consommation simple par un client -> https://github.com/AxaWebCenter/dojo-oauth-net
+			Flow code
+			- postman 
+			- câbler sur une web application (aspnet core + middleware oidc)
+			Flow implicit -> https://github.com/AxaWebCenter/dojo-oauth-net
+			- postman 
+			- câbler sur une web api (aspnet core + middleware JWT Bearer) 
+			- consommation de l'api via postman + application js -> à créer par Jérôme
+Et pour aller plus loin : 
+	- comment je branche IS4 à une source de données autre que mémoire (balayer les interfaces ClientStore, PersistedGrantStore, ResourceStore) ? -> https://github.com/AxaWebCenter/dojo-oauth-net + implémentations vides (ou pas) Simon
+	- Refresh token (postman) Simon
+	- Revocation / Introspection (postman) Simon
+	- Authentification externe (lecture code)
+	- Fédération (schéma + sample) 
+	- Signout
+	
