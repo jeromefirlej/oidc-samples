@@ -153,6 +153,7 @@ namespace IdentityServer4Demo
 
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = { "openid", "profile", "email", "api" },
+                    RequireConsent = false
                 },
                 new Client
                 {
@@ -161,9 +162,9 @@ namespace IdentityServer4Demo
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris =           { "http://localhost:5003/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
-                    AllowedCorsOrigins =     { "http://localhost:5003" },
+                    RedirectUris =           { "http://localhost:5003/callback.html", "http://localhost:4200/auth-callback" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/index.html",  "http://localhost:4200/" },
+                    AllowedCorsOrigins =     { "http://localhost:5003", "http://localhost:4200" },
 
                     AllowedScopes =
                     {
