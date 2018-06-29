@@ -1,5 +1,4 @@
 ﻿using IdentityServer4;
-using IdentityServer4.AccessTokenValidation;
 using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Services;
 using IdentityServer4.Validation;
@@ -21,34 +20,8 @@ namespace IdentityServer4Demo
                 .AddTestUsers(TestUsers.Users)
                 .AddDeveloperSigningCredential(persistKey: false);
 
-            services.AddAuthentication()
-                .AddGoogle("Google", options =>
-                {
-                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-
-                    options.ClientId = "708996912208-9m4dkjb5hscn7cjrn5u0r4tbgkbj1fko.apps.googleusercontent.com";
-                    options.ClientSecret = "wdfPY6t8H8cecgjlxud__4Gh";
-                })
-                .AddIdentityServerAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme, options =>
-                {
-                    options.Authority = "https://demo.identityserver.io";
-
-                    options.ApiName = "api";
-                    options.ApiSecret = "secret";
-                });
-
-            // add CORS policy for non-IdentityServer endpoints
-            services.AddCors(options =>
-            {
-                options.AddPolicy("api", policy =>
-                {
-                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                });
-            });
-
             // demo versions
             services.AddTransient<IRedirectUriValidator, DemoRedirectValidator>();
-            services.AddTransient<ICorsPolicyService, DemoCorsPolicy>();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -56,7 +29,7 @@ namespace IdentityServer4Demo
             app.UseDeveloperExceptionPage();
 
             app.UseCors("api");
-            
+
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

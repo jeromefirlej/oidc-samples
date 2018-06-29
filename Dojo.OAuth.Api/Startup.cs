@@ -29,25 +29,33 @@ namespace Dojo.OAuth.Api
             {
                 AuthorizationPolicy policy = new AuthorizationPolicyBuilder()
                 .RequireAuthenticatedUser()
+                .AddAuthenticationSchemes("is4-demo", "is4-local")
                 .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddAuthentication("jwt")
-                    .AddJwtBearer("jwt", options =>
+            
+            services.AddAuthentication()
+                    .AddJwtBearer("is4-local", options =>
                     {
                         options.Audience = "api";
                         options.Authority = "http://localhost:5001";
                         options.RequireHttpsMetadata = false;
+                    })
+                    .AddJwtBearer("is4-demo", options =>
+                    {
+                        options.Audience = "api";
+                        options.Authority = "https://demo.identityserver.io";
+                        options.RequireHttpsMetadata = false;
                     });
 
-                     services.AddCors(options =>
+            services.AddCors(options =>
             {
                 // this defines a CORS policy called "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5003","http://localhost:4200")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
+                    policy.WithOrigins("http://localhost:5003", "http://localhost:4200")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
                 });
             });
         }
@@ -59,7 +67,7 @@ namespace Dojo.OAuth.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-  app.UseCors("default");
+            app.UseCors("default");
 
             app.UseAuthentication();
             app.UseMvc();
