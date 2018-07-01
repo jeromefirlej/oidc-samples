@@ -1,233 +1,351 @@
 {
-	"variables": [],
-	"info": {
-		"name": "Démo IS4",
-		"_postman_id": "961c6b52-be10-45a2-af21-59d92466a14d",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
+	"id": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+	"name": "Démo IS4",
+	"description": "",
+	"order": [
+		"64c0d990-e5a7-7178-89bd-3c8e89ba2b68",
+		"2e640bf3-a428-3df0-bdc7-f87e5651458f",
+		"27505a29-ea57-7a30-29a3-30721d970051",
+		"d29f2d2a-3129-1a75-c8f0-72f5891d7130",
+		"817ae390-5625-9444-151e-cf2e5cad8749",
+		"8b3874aa-9ea6-6c64-4cab-96d8b82a52c7"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": 0,
+	"public": false,
+	"requests": [
 		{
-			"name": "Accès à une API",
-			"request": {
-				"url": {
-					"raw": "https://demo.identityserver.io/connect/authorize?response_type=token&client_id=implicit&redirect_uri=https://notused&state=test&scope=api",
-					"protocol": "https",
-					"host": [
-						"demo",
-						"identityserver",
-						"io"
-					],
-					"path": [
-						"connect",
-						"authorize"
-					],
-					"query": [
-						{
-							"key": "response_type",
-							"value": "token",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "client_id",
-							"value": "implicit",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "redirect_uri",
-							"value": "https://notused",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "state",
-							"value": "test",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "scope",
-							"value": "api",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "",
-							"value": "",
-							"equals": true,
-							"description": "",
-							"disabled": true
-						},
-						{
-							"key": "",
-							"value": "",
-							"equals": false,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": null
-			},
-			"response": []
-		},
-		{
-			"name": "Accès aux infos identité",
-			"request": {
-				"url": {
-					"raw": "https://demo.identityserver.io/connect/authorize?response_type=id_token&client_id=implicit&redirect_uri=https://notused&state=test&scope=openid profile email&nonce=myNonce",
-					"protocol": "https",
-					"host": [
-						"demo",
-						"identityserver",
-						"io"
-					],
-					"path": [
-						"connect",
-						"authorize"
-					],
-					"query": [
-						{
-							"key": "response_type",
-							"value": "id_token",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "client_id",
-							"value": "implicit",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "redirect_uri",
-							"value": "https://notused",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "state",
-							"value": "test",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "scope",
-							"value": "openid profile email",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "nonce",
-							"value": "myNonce",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "",
-							"value": "",
-							"equals": false,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": null
-			},
-			"response": []
-		},
-		{
+			"id": "27505a29-ea57-7a30-29a3-30721d970051",
 			"name": "Accès aux infos identité + API",
-			"request": {
-				"url": {
-					"raw": "https://demo.identityserver.io/connect/authorize?response_type=id_token token&client_id=implicit&redirect_uri=https://notused&state=test&scope=openid profile email api&nonce=myNonce",
-					"protocol": "https",
-					"host": [
-						"demo",
-						"identityserver",
-						"io"
-					],
-					"path": [
-						"connect",
-						"authorize"
-					],
-					"query": [
-						{
-							"key": "response_type",
-							"value": "id_token token",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "client_id",
-							"value": "implicit",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "redirect_uri",
-							"value": "https://notused",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "state",
-							"value": "test",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "scope",
-							"value": "openid profile email api",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "nonce",
-							"value": "myNonce",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "",
-							"value": "",
-							"equals": false,
-							"description": ""
-						}
-					],
-					"variable": []
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"url": "https://demo.identityserver.io/connect/authorize?response_type=id_token token&client_id=implicit&redirect_uri=https://notused&state=test&scope=openid profile email api&nonce=myNonce&=",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "response_type",
+					"value": "id_token token",
+					"equals": true,
+					"description": ""
 				},
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": null
-			},
-			"response": []
+				{
+					"key": "client_id",
+					"value": "implicit",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "redirect_uri",
+					"value": "https://notused",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "state",
+					"value": "test",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "scope",
+					"value": "openid profile email api",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "nonce",
+					"value": "myNonce",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "",
+					"value": "",
+					"equals": false,
+					"description": ""
+				}
+			],
+			"headerData": [],
+			"collection_id": "a6680f9d-0b02-861f-1cfa-b763e1306204"
 		},
 		{
+			"id": "2e640bf3-a428-3df0-bdc7-f87e5651458f",
+			"name": "Accès aux infos identité",
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"url": "https://demo.identityserver.io/connect/authorize?response_type=id_token&client_id=implicit&redirect_uri=https://notused&state=test&scope=openid profile email&nonce=myNonce&=",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "response_type",
+					"value": "id_token",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "client_id",
+					"value": "implicit",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "redirect_uri",
+					"value": "https://notused",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "state",
+					"value": "test",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "scope",
+					"value": "openid profile email",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "nonce",
+					"value": "myNonce",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "",
+					"value": "",
+					"equals": false,
+					"description": ""
+				}
+			],
+			"headerData": [],
+			"collection_id": "a6680f9d-0b02-861f-1cfa-b763e1306204"
+		},
+		{
+			"id": "64c0d990-e5a7-7178-89bd-3c8e89ba2b68",
+			"name": "Accès à une API",
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {},
+			"url": "https://demo.identityserver.io/connect/authorize?response_type=token&client_id=implicit&redirect_uri=https://notused&state=test&scope=api&=",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "response_type",
+					"value": "token",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "client_id",
+					"value": "implicit",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "redirect_uri",
+					"value": "https://notused",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "state",
+					"value": "test",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "scope",
+					"value": "api",
+					"equals": true,
+					"description": ""
+				},
+				{
+					"key": "",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "",
+					"value": "",
+					"equals": false,
+					"description": ""
+				}
+			],
+			"headerData": [],
+			"collection_id": "a6680f9d-0b02-861f-1cfa-b763e1306204"
+		},
+		{
+			"id": "817ae390-5625-9444-151e-cf2e5cad8749",
+			"headers": "",
+			"headerData": [],
+			"url": "https://demo.identityserver.io/connect/authorize?response_type=code&client_id=server.code&redirect_uri=https://notused&state=myState&scope=openid profile",
+			"queryParams": [
+				{
+					"key": "response_type",
+					"value": "code",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "server.code",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "https://notused",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "state",
+					"value": "myState",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "openid profile",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": false
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1530474611766,
+			"name": "Server - Récupération authorisation code",
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"responses": []
+		},
+		{
+			"id": "8b3874aa-9ea6-6c64-4cab-96d8b82a52c7",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://demo.identityserver.io/connect/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "client_id",
+					"value": "server.code",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "secret",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "code",
+					"value": "80971f1e6a6d85f6dee6931e4f781e4cb85a867d5e4971b24e4f26972d72b5ef",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "https://notused",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1530474640072,
+			"name": "Server - Récupération d'un access token",
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"responses": []
+		},
+		{
+			"id": "d29f2d2a-3129-1a75-c8f0-72f5891d7130",
 			"name": "Consommation API",
-			"request": {
-				"url": "https://demo.identityserver.io/api/test",
-				"method": "GET",
-				"header": [
-					{
-						"key": "",
-						"value": "",
-						"description": ""
-					}
-				],
-				"body": {},
-				"description": ""
-			},
-			"response": []
+			"description": "",
+			"collectionId": "a6680f9d-0b02-861f-1cfa-b763e1306204",
+			"method": "GET",
+			"headers": ": ",
+			"data": [],
+			"rawModeData": "",
+			"url": "https://demo.identityserver.io/api/test",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "",
+					"value": "",
+					"description": ""
+				}
+			],
+			"collection_id": "a6680f9d-0b02-861f-1cfa-b763e1306204"
 		}
 	]
 }
