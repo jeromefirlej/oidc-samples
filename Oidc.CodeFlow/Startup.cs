@@ -46,7 +46,7 @@ namespace Oidc.CodeFlow
                 options.ClientId = "server.code";
                 options.ClientSecret = "secret";
                 options.Scope.Add("profile");
-                options.Scope.Add("email");
+                options.Scope.Add("email");                
             });
         }
 

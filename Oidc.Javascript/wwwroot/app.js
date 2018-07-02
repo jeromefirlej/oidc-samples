@@ -17,8 +17,8 @@ document.getElementById("api").addEventListener("click", api, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 var config = {
-    authority: "http://localhost:5001",
-    client_id: "js",
+    authority: "https://demo.identityserver.io",
+    client_id: "implicit",
     redirect_uri: "http://localhost:5003/callback.html",
     response_type: "id_token token",
     scope:"openid profile api",
@@ -41,7 +41,7 @@ function login() {
 
 function api() {
     mgr.getUser().then(function (user) {
-        var url = "http://localhost:5000/api/values";
+        var url = "https://demo.identityserver.io/api/test";
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
