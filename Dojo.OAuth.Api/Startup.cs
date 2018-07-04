@@ -29,7 +29,7 @@ namespace Dojo.OAuth.Api
             {
                 AuthorizationPolicy policy = new AuthorizationPolicyBuilder()
                 .RequireAuthenticatedUser()
-                .AddAuthenticationSchemes("is4-demo", "is4-local")
+                .AddAuthenticationSchemes( "is4-local", "is4-demo")
                 .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             });
@@ -41,12 +41,11 @@ namespace Dojo.OAuth.Api
                         options.Authority = "http://localhost:5001";
                         options.RequireHttpsMetadata = false;
                     })
-                    .AddJwtBearer("is4-demo", options =>
-                    {
-                        options.Audience = "api";
-                        options.Authority = "https://demo.identityserver.io";
-                        options.RequireHttpsMetadata = false;
+                    .AddJwtBearer("is4-demo", options => {
+                      options.Audience = "api";
+                      options.Authority = "https://demo.identityserver.io";
                     });
+                    
 
             services.AddCors(options =>
             {

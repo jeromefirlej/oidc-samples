@@ -19,10 +19,10 @@ document.getElementById("logout").addEventListener("click", logout, false);
 var config = {
     authority: "https://demo.identityserver.io",
     client_id: "implicit",
-    redirect_uri: "http://localhost:5003/callback.html",
+    redirect_uri: "http://implicit:5003/callback.html",
     response_type: "id_token token",
     scope:"openid profile api",
-    post_logout_redirect_uri : "http://localhost:5003/index.html",
+    post_logout_redirect_uri : "http://implicit:5003/index.html",
 };
 var mgr = new Oidc.UserManager(config);
 
