@@ -30,57 +30,6 @@ namespace IdentityServer4Demo
         {
             return new List<Client>
             {
-                // native clients
-                new Client
-                {
-                    ClientId = "native.hybrid",
-                    ClientName = "Native Client (Hybrid with PKCE)",
-
-                    RedirectUris = { "https://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://notused" },
-
-                    RequireClientSecret = false,
-
-                    AllowedGrantTypes = GrantTypes.Hybrid,
-                    RequirePkce = true,
-                    AllowedScopes = { "openid", "profile", "email", "api" },
-
-                    AllowOfflineAccess = true,
-                    RefreshTokenUsage = TokenUsage.ReUse
-                },
-                new Client
-                {
-                    ClientId = "server.hybrid",
-                    ClientName = "Server-based Client (Hybrid)",
-
-                    RedirectUris = { "https://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://notused" },
-
-                    ClientSecrets = { new Secret("secret".Sha256()) },
-
-                    AllowedGrantTypes = GrantTypes.Hybrid,
-                    AllowedScopes = { "openid", "profile", "email", "api" },
-
-                    AllowOfflineAccess = true,
-                    RefreshTokenUsage = TokenUsage.ReUse
-                },
-                new Client
-                {
-                    ClientId = "native.code",
-                    ClientName = "Native Client (Code with PKCE)",
-
-                    RedirectUris = { "https://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://notused" },
-
-                    RequireClientSecret = false,
-
-                    AllowedGrantTypes = GrantTypes.Code,
-                    RequirePkce = true,
-                    AllowedScopes = { "openid", "profile", "email", "api" },
-
-                    AllowOfflineAccess = true,
-                    RefreshTokenUsage = TokenUsage.ReUse
-                },
                 new Client
                 {
                     ClientId = "server.code",
@@ -96,17 +45,7 @@ namespace IdentityServer4Demo
 
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.ReUse
-                },
-
-                // server to server
-                new Client
-                {
-                    ClientId = "client",
-                    ClientSecrets = { new Secret("secret".Sha256()) },
-
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = { "api" },
-                },
+                },               
 
                 // implicit (e.g. SPA or OIDC authentication)
                 new Client
@@ -121,55 +60,6 @@ namespace IdentityServer4Demo
 
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = { "openid", "profile", "email", "api" },
-                },
-
-                // implicit using reference tokens (e.g. SPA or OIDC authentication)
-                new Client
-                {
-                    ClientId = "implicit.reference",
-                    ClientName = "Implicit Client using reference tokens",
-                    AllowAccessTokensViaBrowser = true,
-
-                    AccessTokenType = AccessTokenType.Reference,
-
-                    RedirectUris = { "https://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://notused" },
-
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowedScopes = { "openid", "profile", "email", "api" },
-                },
-
-                // implicit using reference tokens (e.g. SPA or OIDC authentication)
-                new Client
-                {
-                    ClientId = "implicit.shortlived",
-                    ClientName = "Implicit Client using short-lived tokens",
-                    AllowAccessTokensViaBrowser = true,
-
-                    AccessTokenLifetime = 70,
-
-                    RedirectUris = { "https://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://notused" },
-
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowedScopes = { "openid", "profile", "email", "api" },
-                    RequireConsent = false
-                },
-                new Client
-                {
-                    ClientId = "js",
-                    ClientName = "JavaScript Client",
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowAccessTokensViaBrowser = true,
-
-                    RedirectUris =           { "http://localhost:5003/callback.html", "http://localhost:4200/auth-callback" },
-                    PostLogoutRedirectUris = { "http://localhost:5003/index.html",  "http://localhost:4200/" },
-                    AllowedCorsOrigins =     { "http://localhost:5003", "http://localhost:4200" },
-
-                    AllowedScopes =
-                    {
-                         "openid", "profile","api"
-                    }
                 }
             };
         }
